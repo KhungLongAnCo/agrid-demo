@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Radio, Tabs } from "antd";
+import "./App.css";
+import Intro from "./steps/Intro";
+import Config from "./steps/Config";
+import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
+import Components from "./steps/Components";
+import SimpleDemo from "./demo/SimpleDemo";
 
-function App() {
+const listTab = [
+  {
+    label: "Intro",
+    key: 1,
+    children: <Intro />,
+  },
+  {
+    label: "Config",
+    key: 2,
+    children: <Config />,
+  },
+  {
+    label: "Components",
+    key: 3,
+    children: <Components />,
+  },
+  {
+    label: "Simple Demo",
+    key: 4,
+    children: <SimpleDemo />,
+  },
+];
+
+const App = () => {
+  const [mode, setMode] = useState("top");
+
+  const handleModeChange = (e) => {
+    setMode(e.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs
+        defaultActiveKey="1"
+        tabPosition={mode}
+        style={{ height: 220 }}
+        items={listTab}
+      />
     </div>
   );
-}
+};
 
 export default App;
