@@ -1,11 +1,29 @@
-import React from "react";
-import SimpleDemo from "../demo/SimpleDemo";
+import { Pagination } from "antd";
+import React, { useState } from "react";
+
+import CellEditing from "../features/CellEditing";
+import ColumnReordering from "../features/ColumnReordering";
+import ColumnResizing from "../features/ColumnResizing";
+import Exporting from "../features/Exporting";
+import Filtering from "../features/Filtering";
+import Grouping from "../features/Pagination";
+import RowPinning from "../features/RowPinning";
+import RowSelection from "../features/RowSelection";
+import SortingComponent from "../features/SortingComponent";
 import CodeBlock from "./CodeBlock";
+import { Collapse } from "antd";
+
+const { Panel } = Collapse;
 
 function Components(props) {
+  const [activePanel, setActivePanel] = useState([]);
+  const onChange = (key) => {
+    console.log(key);
+  };
+
   return (
     <div>
-      <h3>Các thành phần quan trọng của React-AG-Grid bao gồm:</h3>
+      <h3>Thành phần co ban của React-AG-Grid bao gồm:</h3>
       AgGridReact: Đây là thành phần chính để hiển thị bảng. Nó cung cấp các
       thuộc tính để cấu hình và quản lý bảng, bao gồm cách hiển thị dữ liệu,
       cách sắp xếp và lọc, và cách xử lý sự kiện. AgGridColumn: Đây là thành
@@ -45,6 +63,62 @@ function Components(props) {
       React-AG-Grid là AgGridReact và AgGridColumn. Chúng ta cũng đang sử dụng
       một số thuộc tính của AgGridReact, bao gồm rowData để cung cấp dữ liệu cho
       bảng và ag-theme-alpine để áp dụng một giao diện người dùng cho bảng
+      <hr />
+      <h3>
+        Dưới đây là một số tính năng thường được sử dụng trong React-AG-Grid:
+      </h3>
+      <div>
+        <Collapse defaultActiveKey={{ activePanel }} onChange={onChange}>
+          <Panel header={<b>Sorting</b>} key="1">
+            Sắp xếp dữ liệu trên bảng theo nhiều tiêu chí khác nhau như tăng
+            dần, giảm dần, theo thứ tự chữ cái, theo giá trị số, v.v.
+            <SortingComponent />
+          </Panel>
+          <Panel header={<b>Filtering</b>} key="2">
+            Lọc dữ liệu trên bảng theo nhiều tiêu chí khác nhau như theo từ
+            khóa, theo phạm vi giá trị, v.v.
+            <Filtering />
+          </Panel>
+          <Panel header={<b>Grouping</b>} key="3">
+            Nhóm dữ liệu trên bảng theo các cột cụ thể, giúp người dùng dễ dàng
+            nhìn thấy và phân tích dữ liệu.
+            <Grouping />
+          </Panel>
+          <Panel header={<b>Row Selection</b>} key="4">
+            Cho phép người dùng chọn một hay nhiều hàng trên bảng.
+            <RowSelection />
+          </Panel>
+          <Panel header={<b>Pagination</b>} key="5">
+            Phân trang dữ liệu trên bảng, giúp tối ưu hóa hiển thị khi số lượng
+            dữ liệu lớn.
+            <Pagination />
+          </Panel>
+          <Panel header={<b>Cell Editing</b>} key="6">
+            Cho phép người dùng chỉnh sửa dữ liệu trực tiếp trên bảng.
+            <CellEditing />
+          </Panel>
+          <Panel header={<b>Row Pinning</b>} key="7">
+            Ghim các hàng trên bảng, giúp người dùng dễ dàng theo dõi các dữ
+            liệu quan trọng.
+            <RowPinning />
+          </Panel>
+          <Panel header={<b>Column Resizing</b>} key="8">
+            Cho phép người dùng thay đổi kích thước của các cột trên bảng.
+            <ColumnResizing />
+          </Panel>
+          <Panel header={<b>Column Reordering</b>} key="9">
+            Cho phép người dùng sắp xếp lại vị trí các cột trên bảng.
+            <ColumnReordering />
+          </Panel>
+          <Panel header={<b>Exporting</b>} key="10">
+            Cho phép người dùng xuất dữ liệu từ bảng sang các định dạng khác
+            nhau như CSV, Excel, PDF, v.v.
+            <Exporting />
+          </Panel>
+        </Collapse>
+      </div>
+      <hr />
+      <h3>Chi tiet cac thanh phan quan trong cua React-AG-Grid</h3>
       <ul>
         <li>
           <a

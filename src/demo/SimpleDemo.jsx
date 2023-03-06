@@ -143,6 +143,15 @@ const SimpleDemo = () => {
           </div>
         </Col>
       </Row>
+      <div>
+        <a
+          href="https://www.ag-grid.com/react-data-grid/grouping-opening-groups/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          React Data Grid: Row Grouping - Opening Groups
+        </a>
+      </div>
     </div>
   );
 };

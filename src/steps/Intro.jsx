@@ -5,15 +5,14 @@ function Intro(props) {
     <div>
       <h2>Intro</h2>
       <h3>
-        React-AG Grid là một thư viện phổ biến cho việc hiển thị và quản lý dữ
-        liệu trong các ứng dụng web sử dụng ReactJS. Nó là một phiên bản của AG
-        Grid, một thư viện được sử dụng rộng rãi cho các ứng dụng quản lý dữ
-        liệu trên web.
-        <br />
-        React-AG Grid cung cấp các thành phần UI mạnh mẽ và linh hoạt để hiển
-        thị, tìm kiếm, lọc và sắp xếp dữ liệu. Thư viện này cũng hỗ trợ nhiều
-        tính năng tiên tiến như phân trang dữ liệu, đánh dấu hàng đầu, trộn cột,
-        xuất dữ liệu và nhiều hơn nữa.
+        AG Grid là một thư viện dành cho Javascript để tạo ra các bảng dữ liệu,
+        cung cấp nhiều tính năng như phân trang, sắp xếp, lọc, tìm kiếm, chỉnh
+        sửa dữ liệu trực tiếp, kéo thả cột, dòng và cột tự động điều chỉnh kích
+        thước cho phù hợp với nội dung của các ô. Nó được sử dụng rộng rãi trong
+        các ứng dụng web và các dự án phát triển phần mềm. AG Grid hỗ trợ các
+        framework như Angular, React, Vue, Web Components và các ngôn ngữ lập
+        trình khác nhau như Javascript, TypeScript, Vue, React, Angular, và các
+        ngôn ngữ lập trình khác.
         <br />
         React-AG Grid được xây dựng dựa trên các công nghệ web tiên tiến như
         ReactJS và TypeScript, giúp cho việc phát triển ứng dụng nhanh chóng và
@@ -27,7 +26,7 @@ function Intro(props) {
         web lớn và phức tạp.
       </h3>
       <h3>
-        Một số trang web nổi tiếng sử dụng React-AG Grid:
+        Một số trang web nổi tiếng sử dụng AG Grid:
         <ol>
           <li>Amazon</li>
           <li>IBM</li>

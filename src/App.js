@@ -6,6 +6,7 @@ import Config from "./steps/Config";
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import Components from "./steps/Components";
 import SimpleDemo from "./demo/SimpleDemo";
+import ExpandedRowTable from "./demo/ExpandedRow";
 
 const listTab = [
   {
@@ -24,9 +25,14 @@ const listTab = [
     children: <Components />,
   },
   {
-    label: "Simple Demo",
+    label: "Demo",
     key: 4,
-    children: <SimpleDemo />,
+    children: (
+      <div>
+        <SimpleDemo />
+        <ExpandedRowTable />
+      </div>
+    ),
   },
 ];
 
